@@ -41,7 +41,7 @@ async def command_start_handler(message: Message) -> None:
         )
     else:
         await message.answer(
-            f"Привет, {user.first_name}!\n"
+            f"Ты нахуя нажал start? Ладно,привет, {user.first_name}!\n"
             f"Добавьте меня в группу, чтобы использовать игры, рейтинг и модерацию."
         )
 
@@ -72,11 +72,11 @@ async def mute_user(message: Message):
                 user_id=message.reply_to_message.from_user.id,
                 permissions=ChatPermissions(can_send_messages=False)
             )
-            await message.answer("Пользователь в муте.")
+            await message.answer("Этот долбаеб теперь в муте.")
         except Exception as e:
             await message.answer(f"Ошибка мута (проверьте права бота): {e}")
     else:
-        await message.answer("Ответьте на сообщение пользователя, которого нужно замутить.")
+        await message.answer("Ответьте на сообщение пидораса, которого нужно замутить.")
 
 @dp.message(Command("размут"))
 async def unmute_user(message: Message):
@@ -90,7 +90,7 @@ async def unmute_user(message: Message):
         except Exception as e:
             await message.answer(f"Ошибка размута: {e}")
     else:
-        await message.answer("Ответьте на сообщение пользователя.")
+        await message.answer("Ответьте на сообщение пидораса.")
 
 @dp.message(Command("антистикер"))
 async def anti_sticker_cmd(message: Message):
